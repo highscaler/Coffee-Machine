@@ -33,7 +33,7 @@ public class NumericMatrixProcessor5 {
         if (choice == null) {
             System.out.println();
             for (StateOfMenu value : StateOfMenu.values()) {
-                if (value.getItemNumber() / 10 != 4) {
+                if (value.getItemNumber() < 10) {
                     System.out.println(value.getItemName());
                 }
             }
@@ -42,7 +42,7 @@ public class NumericMatrixProcessor5 {
         } else if (choice == StateOfMenu.TRANSPOSE_MATRIX){
             System.out.println();
             for (StateOfMenu value : StateOfMenu.values()) {
-                if (value.getItemNumber() / 10 == 4) {
+                if (value.getItemNumber() / 10 == choice.getItemNumber()) {
                     System.out.println(value.getItemName());
                 }
             }
@@ -254,6 +254,7 @@ enum StateOfMenu {
                 return value;
             }
         }
+		System.out.println("Your option is incorrect!");
         return null;
     }
 }
